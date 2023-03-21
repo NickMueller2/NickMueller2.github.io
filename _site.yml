@@ -3,6 +3,6 @@ navbar:
   title: "Nicholas Mueller"
   left:
     - text: "About Me"
-      href: Templete.html
+      href: index.html
     - text: "Beer Study"
       href: BeerStudy.html
