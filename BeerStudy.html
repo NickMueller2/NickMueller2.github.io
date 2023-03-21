@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Thibeaux" />
+
+<meta name="date" content="2023-02-20" />
+
+<title>Mueller_Thibeaux_Case Study</title>
+
+<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Nicholas Mueller</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="Templete.html">About Me</a>
+</li>
+<li>
+  <a href="BeerStudy.html">Beer Study</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Mueller_Thibeaux_Case Study</h1>
+<h4 class="author">Thibeaux</h4>
+<h4 class="date">2023-02-20</h4>
+
+</div>
+
+
+<p>Introduction: Welcome to Nicholas Mueller and Alex Thibeaux case
+study.Through our code you will visually see insights on the
+distribution of beers and breweries among every state. Along with
+interesting finds of different styled beers, IBUs, ABVs, and more. We
+have also provided alternative options to missing data so that we are
+able to get the full potential out of our data set. If you have any
+question feel free to reach out.</p>
+<pre class="r"><code>library(maps)
+library(ggplot2)
+library(ggthemes)
+library(dplyr)
+library(stringr)
+library(class)
+library(caret)
+library(mice)
+library(RColorBrewer)
+library(tidyr)</code></pre>
+<p>These libraries will help us plot and manipulate our data so that we
+can visually present appropriate findings.</p>
+<pre class="r"><code>beers &lt;- read.csv(&#39;https://github.com/athibeaux/MSDS-DDS/raw/main/Mueller%20Thibeaux%20Case%20Study/Beers.csv&#39;, header = TRUE, fill = TRUE)
+breweries &lt;- read.csv(&#39;https://github.com/athibeaux/MSDS-DDS/raw/main/Mueller%20Thibeaux%20Case%20Study/Breweries.csv&#39;, header = TRUE, fill = TRUE)
+
+merged &lt;- merge(beers, breweries, by.x = &quot;Brewery_id&quot;, by.y = &quot;Brew_ID&quot;)</code></pre>
+<p>We took the beers and breweries data set and merged it into one data
+set so that we can use the entirety of the data to provide findings.</p>
+<ol style="list-style-type: decimal">
+<li>How many breweries are present in each state?</li>
+</ol>
+<pre class="r"><code>breweries_by_state &lt;- breweries %&gt;% 
+  group_by(State) %&gt;% 
+  summarize(Count = n())%&gt;% 
+  arrange(desc(Count))
+
+ggplot(breweries_by_state, aes(x = reorder(State, Count), y = Count)) +
+  geom_bar(stat = &quot;identity&quot;, fill = &quot;blue&quot;) +
+  xlab(&quot;State&quot;) + ylab(&quot;Number of Breweries&quot;) +
+  ggtitle(&quot;Number of Breweries in Each State&quot;) +
+  theme_wsj() + theme(plot.title = element_text(size = 14, face = &quot;bold&quot;),
+                      axis.text.x = element_text(angle = 90, hjust = 1))+
+  geom_text(aes(label = Count), vjust = -0.5)</code></pre>
+<p><img src="BeerStudy_files/figure-html/Number%20of%20Breweries%20by%20State-1.png" width="672" />
+We grouped the breweries by state and summarized the number of breweries
+in each states. Then we were able to plot a bar graph that shows each
+state and its corresponding number of breweries in descending order.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Merge beer data with the breweries data. Print the first 6
+observations and the last six observations to check the merged file.
+(RMD only, this does not need to be included in the presentation or the
+deck.)</li>
+</ol>
+<pre class="r"><code>head(merged, 6)</code></pre>
+<pre><code>##   Brewery_id        Name.x Beer_ID   ABV IBU                               Style Ounces             Name.y
+## 1          1  Get Together    2692 0.045  50                        American IPA     16 NorthGate Brewing 
+## 2          1 Maggie&#39;s Leap    2691 0.049  26                  Milk / Sweet Stout     16 NorthGate Brewing 
+## 3          1    Wall&#39;s End    2690 0.048  19                   English Brown Ale     16 NorthGate Brewing 
+## 4          1       Pumpion    2689 0.060  38                         Pumpkin Ale     16 NorthGate Brewing 
+## 5          1    Stronghold    2688 0.060  25                     American Porter     16 NorthGate Brewing 
+## 6          1   Parapet ESB    2687 0.056  47 Extra Special / Strong Bitter (ESB)     16 NorthGate Brewing 
+##          City State
+## 1 Minneapolis    MN
+## 2 Minneapolis    MN
+## 3 Minneapolis    MN
+## 4 Minneapolis    MN
+## 5 Minneapolis    MN
+## 6 Minneapolis    MN</code></pre>
+<pre class="r"><code>tail(merged, 6)</code></pre>
+<pre><code>##      Brewery_id                    Name.x Beer_ID   ABV IBU                   Style Ounces
+## 2405        556             Pilsner Ukiah      98 0.055  NA         German Pilsener     12
+## 2406        557  Heinnieweisse Weissebier      52 0.049  NA              Hefeweizen     12
+## 2407        557           Snapperhead IPA      51 0.068  NA            American IPA     12
+## 2408        557         Moo Thunder Stout      50 0.049  NA      Milk / Sweet Stout     12
+## 2409        557         Porkslap Pale Ale      49 0.043  NA American Pale Ale (APA)     12
+## 2410        558 Urban Wilderness Pale Ale      30 0.049  NA        English Pale Ale     12
+##                             Name.y          City State
+## 2405         Ukiah Brewing Company         Ukiah    CA
+## 2406       Butternuts Beer and Ale Garrattsville    NY
+## 2407       Butternuts Beer and Ale Garrattsville    NY
+## 2408       Butternuts Beer and Ale Garrattsville    NY
+## 2409       Butternuts Beer and Ale Garrattsville    NY
+## 2410 Sleeping Lady Brewing Company     Anchorage    AK</code></pre>
+<p>We are able to see the top 6 and last 6 values in each column.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Address the missing values in each column.</li>
+</ol>
+<pre class="r"><code># Load the mice package
+library(mice)
+
+# Convert IBU variable to factor
+merged$IBU &lt;- as.factor(merged$IBU)
+
+# Create a mice imputation object with predictive mean matching
+imp &lt;- mice(merged, method = &quot;pmm&quot;)</code></pre>
+<pre><code>## 
+##  iter imp variable
+##   1   1  ABV  IBU
+##   1   2  ABV  IBU
+##   1   3  ABV  IBU
+##   1   4  ABV  IBU
+##   1   5  ABV  IBU
+##   2   1  ABV  IBU
+##   2   2  ABV  IBU
+##   2   3  ABV  IBU
+##   2   4  ABV  IBU
+##   2   5  ABV  IBU
+##   3   1  ABV  IBU
+##   3   2  ABV  IBU
+##   3   3  ABV  IBU
+##   3   4  ABV  IBU
+##   3   5  ABV  IBU
+##   4   1  ABV  IBU
+##   4   2  ABV  IBU
+##   4   3  ABV  IBU
+##   4   4  ABV  IBU
+##   4   5  ABV  IBU
+##   5   1  ABV  IBU
+##   5   2  ABV  IBU
+##   5   3  ABV  IBU
+##   5   4  ABV  IBU
+##   5   5  ABV  IBU</code></pre>
+<pre><code>## Warning: Number of logged events: 5</code></pre>
+<pre class="r"><code># Generate 5 imputed datasets
+imputed_data &lt;- complete(imp, 5)
+
+# Combine the imputed datasets into a single data frame
+combined_data &lt;- complete(imp, action = &quot;long&quot;)
+
+# Use the complete data for subsequent analysis
+imputed_beers &lt;- combined_data[combined_data$&quot;.imp&quot; == 5, ]
+
+Imputed_IBU=imputed_beers$IBU
+
+merged_Imputed &lt;- cbind(merged, Imputed_IBU)</code></pre>
+<p>We used a library function call multivariate imputation via chained
+equation or mice for short. This is a type of regression model which
+uses a predictive mean matching technique that uses values like style,
+ABV, and other columns in the data set to predict missing values like
+IBU.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Compute the median alcohol content and international bitterness unit
+for each state. Plot a bar chart to compare.</li>
+</ol>
+<pre class="r"><code># Since our imputation of the data converted the continues variables into factors, we will now change them back to numeric in order to run statistical analysis on them.
+merged_Imputed$IBU=as.numeric(merged_Imputed$IBU)
+merged_Imputed$ABV=as.numeric(merged_Imputed$ABV)
+merged_Imputed$Imputed_IBU=as.numeric(merged_Imputed$Imputed_IBU)
+
+# Create a new dataframe that has the Median ABV and IBU by state
+merged3&lt;- merged_Imputed %&gt;% 
+  group_by(State) %&gt;% 
+  summarize(median_abv = median(ABV, na.rm = TRUE), 
+            median_ibu = median(IBU, na.rm = TRUE),
+            median_imputedIBU= median(Imputed_IBU, na.rm=TRUE))
+
+
+# Bar Chart of Median ABV by State
+ggplot(merged3, aes(x = reorder(State, median_abv), y = median_abv)) +
+  geom_bar(stat = &quot;identity&quot;, fill = &quot;brown&quot;) +
+  xlab(&quot;State&quot;) + ylab(&quot;Median Alcohol Content&quot;) +
+  ggtitle(&quot;Median Alcohol Content by State&quot;) + 
+  theme_economist() + theme(plot.title = element_text(size = 14, face = &quot;bold&quot;),
+                     axis.text.x = element_text(angle = 90, hjust = 1))</code></pre>
+<p><img src="BeerStudy_files/figure-html/Compute%20Median%20ABV%20and%20IBU%20by%20State-1.png" width="672" /></p>
+<pre class="r"><code># Bar Chart of Median IBU by State (raw data)
+ggplot(merged3, aes(x = reorder(State,  median_ibu), y =  median_ibu)) +
+  geom_bar(stat = &quot;identity&quot;, fill = &quot;red&quot;) +
+  xlab(&quot;State&quot;) + ylab(&quot;Median IBU&quot;) +
+  ggtitle(&quot;Median IBU by State&quot;) +
+  theme_economist() + 
+  geom_text(aes(label = median_ibu), position = position_nudge(y = 1), size = 2) +
+  theme(plot.title = element_text(size = 14, face = &quot;bold&quot;),
+                     axis.text.x = element_text(angle = 90, hjust = 1))</code></pre>
+<pre><code>## Warning: Removed 1 rows containing missing values (`position_stack()`).</code></pre>
+<pre><code>## Warning: Removed 1 rows containing missing values (`geom_text()`).</code></pre>
+<p><img src="BeerStudy_files/figure-html/Compute%20Median%20ABV%20and%20IBU%20by%20State-2.png" width="672" /></p>
+<pre class="r"><code># Bar Chart of Median IBU by State (imputed data)
+ggplot(merged3, aes(x = reorder(State,  median_imputedIBU), y =  median_imputedIBU)) +
+  geom_bar(stat = &quot;identity&quot;, fill = &quot;blue&quot;) +
+  xlab(&quot;State&quot;) + ylab(&quot;Median Imputed IBU&quot;) +
+  ggtitle(&quot;Median Imputed IBU by State&quot;) +
+  theme_economist() + geom_text(aes(label = median_imputedIBU), position = position_nudge(y = 1), size = 2) +
+  theme(plot.title = element_text(size = 14, face = &quot;bold&quot;),
+        axis.text.x = element_text(angle = 90, hjust = 1))</code></pre>
+<p><img src="BeerStudy_files/figure-html/Compute%20Median%20ABV%20and%20IBU%20by%20State-3.png" width="672" />
+For question 4 we used the merged data set with the imputed IBU column
+and the original IBU column to plot a bar chart of median IBU per state
+along with a bar chart of median ABV per state.</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Which state has the maximum alcoholic (ABV) beer? Which state has
+the most bitter (IBU) beer?</li>
+</ol>
+<pre class="r"><code># Bar chart of Top 5 Highest ABVs
+merged_Imputed %&gt;% 
+  group_by(State,Name.x) %&gt;%
+  arrange(desc(ABV))%&gt;%
+  head(5)%&gt;%
+  ggplot(aes(x=reorder(Name.x,ABV),y=ABV, fill=State)) +
+  xlab(&quot;&quot;) + geom_col() + coord_flip() + theme_economist() +
+  ggtitle(&quot;Top 5 Highest ABVs&quot;) +
+  geom_text(aes(label = ABV), position = position_nudge(y = -.01))</code></pre>
+<p><img src="BeerStudy_files/figure-html/Max%20ABV%20and%20IBU-1.png" width="672" /></p>
+<pre class="r"><code># Bar chart of Top 5 Highest IBUs (Non-Imputed Data)
+merged_Imputed %&gt;% 
+  group_by(State,Name.x) %&gt;%
+  arrange(desc(IBU))%&gt;%
+  head(5)%&gt;%
+  ggplot(aes(x=reorder(Name.x,Imputed_IBU),y=Imputed_IBU, fill=State)) +
+  xlab(&quot;&quot;) + ggtitle(&quot;Top 5 Highest IBUs using Non-Imputed Data&quot;) +
+  geom_col() + coord_flip() + theme_economist() + 
+  geom_text(aes(label = IBU), position = position_nudge(y = -5))</code></pre>
+<p><img src="BeerStudy_files/figure-html/Max%20ABV%20and%20IBU-2.png" width="672" /></p>
+<pre class="r"><code># Bar chart of Top 5 Highest IBUs (Imputed Data)
+merged_Imputed %&gt;% 
+  group_by(State,Name.x) %&gt;%
+  arrange(desc(IBU))%&gt;%
+  head(5)%&gt;%
+  ggplot(aes(x=reorder(Name.x,Imputed_IBU),y=Imputed_IBU, fill=State)) +
+  xlab(&quot;&quot;) + ylab(&quot;IBU&quot;) + ggtitle(&quot;Top 5 Highest IBUs using Imputed Data&quot;) +
+  geom_col() + coord_flip() + theme_economist() + 
+  geom_text(aes(label = Imputed_IBU), position = position_nudge(y = -5))</code></pre>
+<p><img src="BeerStudy_files/figure-html/Max%20ABV%20and%20IBU-3.png" width="672" />
+For question 5 we took the complete data set and grouped it by state.
+Once grouped by state we were able to filter out the top 5 highest IBU
+states and ABV states and displayed 2 different bar graphs, one with the
+top 5 highest IBUs and then the other top 5 highest ABVs.</p>
+<ol start="6" style="list-style-type: decimal">
+<li>Comment on the summary statistics and distribution of the ABV
+variable.</li>
+</ol>
+<pre class="r"><code># View Summary Statistics and Mean
+summary(merged$ABV)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+## 0.00100 0.05000 0.05600 0.05977 0.06700 0.12800      62</code></pre>
+<pre class="r"><code>mean(!is.na(merged$ABV))</code></pre>
+<pre><code>## [1] 0.9742739</code></pre>
+<pre class="r"><code># Create Histogram and Boxplot
+merged %&gt;% ggplot() + geom_histogram(aes(x = ABV)) + 
+  theme_economist() + ggtitle(&quot;Distribution of ABV Variable&quot;)</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 62 rows containing non-finite values (`stat_bin()`).</code></pre>
+<p><img src="BeerStudy_files/figure-html/Summary%20Statistics%20and%20Distribution%20of%20ABV-1.png" width="672" /></p>
+<pre class="r"><code>merged %&gt;% ggplot() + geom_boxplot(aes(x = ABV)) + theme_economist() + ggtitle(&quot;Distribution of ABV Variable&quot;)</code></pre>
+<pre><code>## Warning: Removed 62 rows containing non-finite values (`stat_boxplot()`).</code></pre>
+<p><img src="BeerStudy_files/figure-html/Summary%20Statistics%20and%20Distribution%20of%20ABV-2.png" width="672" />
+For question 6 we used a summary tool in Rstudio to be able to determine
+the ABV minimum, average, and maximum content among the 50 states. Once
+retrieving the statistics we decided to plot a histogram and box plot to
+visually display the findings using ggplot.</p>
+<ol start="7" style="list-style-type: decimal">
+<li>Is there an apparent relationship between the bitterness of the beer
+and its alcoholic content? Draw a scatter plot. Make your best judgment
+of a relationship and EXPLAIN your answer.</li>
+</ol>
+<pre class="r"><code>#Labeled the breaks in IBU from mild to extremely bitter
+merged_Imputed$Bitterness &lt;- cut(as.numeric(merged$IBU), breaks=c(0, 20, 40, 60, 80, 140), labels=c(&#39;Mild&#39;, &#39;Moderately Bitter&#39;, &#39;Fairly Bitter&#39;, &#39;Very Bitter&#39;, &#39;Extremely Bitter&#39;))
+                   
+# Non-imputed Data
+merged_Imputed %&gt;% ggplot() + geom_jitter(aes(x = ABV, y = IBU, color=Bitterness))+ggtitle(&quot;Relationship Between IBU and ABV&quot;) + theme_pander()</code></pre>
+<pre><code>## Warning: Removed 1005 rows containing missing values (`geom_point()`).</code></pre>
+<p><img src="BeerStudy_files/figure-html/Relationship%20of%20IBU%20and%20ABV-1.png" width="672" /></p>
+<pre class="r"><code>#Labeled the breaks in Imputed IBU from mild to extremely bitter
+merged_Imputed$Bitterness_Imputed &lt;- cut(as.numeric(merged_Imputed$Imputed_IBU), breaks=c(0, 20, 40, 60, 80, 140), labels=c(&#39;Mild&#39;, &#39;Moderately Bitter&#39;, &#39;Fairly Bitter&#39;, &#39;Very Bitter&#39;, &#39;Extremely Bitter&#39;))
+
+# Imputed Data
+merged_Imputed %&gt;% ggplot() + geom_jitter(aes(x = ABV, y = Imputed_IBU, color=Bitterness_Imputed))+ylab(&quot;Imputed IBU&quot;)+ggtitle(&quot;Relationship Between  Imputed IBU and ABV&quot;)+ theme_pander()</code></pre>
+<pre><code>## Warning: Removed 62 rows containing missing values (`geom_point()`).</code></pre>
+<p><img src="BeerStudy_files/figure-html/Relationship%20of%20IBU%20and%20ABV-2.png" width="672" />
+For question 7 we used the scatter plot method in R studio to show the
+relationship between IBU and ABV. We displayed one scatter plot with the
+original data and the other scatter plot with the imputed IBU.</p>
+<ol start="8" style="list-style-type: decimal">
+<li>Budweiser would also like to investigate the difference with respect
+to IBU and ABV between IPAs (India Pale Ales) and other types of Ale
+(any beer with “Ale” in its name other than IPA). You decide to use KNN
+classification to investigate this relationship. Provide statistical
+evidence one way or the other. You can of course assume your audience is
+comfortable with percentages … KNN is very easy to understand
+conceptually.</li>
+</ol>
+<pre class="r"><code># Find IPA and Ale Rows
+sum(str_count(merged$Style,&quot;IPA&quot;))</code></pre>
+<pre><code>## [1] 571</code></pre>
+<pre class="r"><code>sum(str_count(merged$Style,&quot;Ale&quot;))</code></pre>
+<pre><code>## [1] 976</code></pre>
+<pre class="r"><code>merged$IPA &lt;- as.factor(ifelse(grepl(&quot;IPA&quot;, merged$Style), TRUE, FALSE))
+merged$Ale &lt;- as.factor(ifelse(grepl(&quot;Ale&quot;, merged$Style) &amp; merged$IPA == FALSE, TRUE, FALSE))
+
+summary(merged)</code></pre>
+<pre><code>##    Brewery_id       Name.x             Beer_ID            ABV               IBU          Style          
+##  Min.   :  1.0   Length:2410        Min.   :   1.0   Min.   :0.00100   20     :  82   Length:2410       
+##  1st Qu.: 94.0   Class :character   1st Qu.: 808.2   1st Qu.:0.05000   35     :  60   Class :character  
+##  Median :206.0   Mode  :character   Median :1453.5   Median :0.05600   65     :  54   Mode  :character  
+##  Mean   :232.7                      Mean   :1431.1   Mean   :0.05977   30     :  53                     
+##  3rd Qu.:367.0                      3rd Qu.:2075.8   3rd Qu.:0.06700   70     :  48                     
+##  Max.   :558.0                      Max.   :2692.0   Max.   :0.12800   (Other):1108                     
+##                                                      NA&#39;s   :62        NA&#39;s   :1005                     
+##      Ounces         Name.y              City              State              IPA          Ale      
+##  Min.   : 8.40   Length:2410        Length:2410        Length:2410        FALSE:1839   FALSE:1447  
+##  1st Qu.:12.00   Class :character   Class :character   Class :character   TRUE : 571   TRUE : 963  
+##  Median :12.00   Mode  :character   Mode  :character   Mode  :character                            
+##  Mean   :13.59                                                                                     
+##  3rd Qu.:16.00                                                                                     
+##  Max.   :32.00                                                                                     
+## </code></pre>
+<pre class="r"><code>alesNA &lt;- filter(merged, merged$IPA == TRUE | merged$Ale == TRUE)
+ales &lt;- alesNA[complete.cases(alesNA),]
+ales$AleOrIPA &lt;- as.factor(ifelse(ales$Ale == TRUE, &quot;Ale&quot;, &quot;IPA&quot;))
+summary(ales)</code></pre>
+<pre><code>##    Brewery_id        Name.x             Beer_ID            ABV               IBU         Style          
+##  Min.   :  1.00   Length:944         Min.   :   1.0   Min.   :0.03500   20     : 54   Length:944        
+##  1st Qu.: 99.75   Class :character   1st Qu.: 786.8   1st Qu.:0.05200   65     : 51   Class :character  
+##  Median :202.00   Mode  :character   Median :1457.5   Median :0.06000   70     : 48   Mode  :character  
+##  Mean   :226.40                      Mean   :1418.1   Mean   :0.06178   35     : 41                     
+##  3rd Qu.:345.25                      3rd Qu.:2068.2   3rd Qu.:0.07000   60     : 41                     
+##  Max.   :547.00                      Max.   :2692.0   Max.   :0.09900   30     : 32                     
+##                                                                         (Other):677                     
+##      Ounces         Name.y              City              State              IPA         Ale      AleOrIPA 
+##  Min.   :12.00   Length:944         Length:944         Length:944         FALSE:552   FALSE:392   Ale:552  
+##  1st Qu.:12.00   Class :character   Class :character   Class :character   TRUE :392   TRUE :552   IPA:392  
+##  Median :12.00   Mode  :character   Mode  :character   Mode  :character                                    
+##  Mean   :13.51                                                                                             
+##  3rd Qu.:16.00                                                                                             
+##  Max.   :32.00                                                                                             
+## </code></pre>
+<pre class="r"><code># Display Scatterplot of dataset with only IPAs and Ales
+ales %&gt;% ggplot() + geom_jitter(aes(x = as.numeric(ABV), y = as.numeric(IBU), color=AleOrIPA))+xlab(&quot;ABV&quot;) + ylab(&quot;IBU&quot;)+ggtitle(&quot;Relationship Between IBU and ABV&quot;)</code></pre>
+<p><img src="BeerStudy_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+We were able to filter the IPA and ale from the original data set making
+sure that if the style had both IPA and Ale in the name it would be
+classified as IPA.</p>
+<p>KNN Model</p>
+<pre class="r"><code># KNN
+iterations = 100
+splitPerc = .70
+
+masterAcc = matrix(nrow = iterations)
+  
+for(j in 1:iterations)
+{
+accs = data.frame(accuracy = numeric(90), k = numeric(90))
+trainIndices = sample(1:dim(ales)[1],round(splitPerc * dim(ales)[1]))
+train = ales[trainIndices,]
+test = ales[-trainIndices,]
+classifications = knn(train[,c(4,5)],test[,c(4,5)],train$AleOrIPA, prob = TRUE, k = 30)
+  table(classifications,test$AleOrIPA)
+  CMknn = confusionMatrix(table(classifications,test$AleOrIPA))
+  masterAcc[j] = CMknn$overall[1]
+}
+
+MeanAcc = colMeans(masterAcc)
+MeanAcc</code></pre>
+<pre><code>## [1] 0.8427562</code></pre>
+<pre class="r"><code>CMknn$byClass[1]</code></pre>
+<pre><code>## Sensitivity 
+##   0.8493976</code></pre>
+<pre class="r"><code>CMknn$byClass[2]</code></pre>
+<pre><code>## Specificity 
+##   0.8034188</code></pre>
+<p>We used the k-nearest-neighbor model to show that we are able to
+predict wehter a beer is an IPA or an Ale based on the IBU and ABV
+statistics or numbers for that beer. The KNN model looks at the scatter
+plot of the relationship between IBU and ABV and selects the nearest
+neighbors (K being how many nearest neighbors you want) and depending on
+what the majority nearest to the point being evaluated will be the
+predicted category. We used K=30 because of how large the data set
+is.</p>
+<p>The KNN uses a train and a test set to estimate how accurate the
+model will be. Since we have the correct catigories in the test set we
+are able to see how accurate the predication model is at predication
+wether the beer is Ale or IPA. The KNN model will run different train
+and tests sets every time, however majority of the time the accuracy
+lies between 80% and 90%, sensitivity between 80% and 90%, and
+specificity between 75% and 85%.</p>
+<p>In addition, while you have decided to use KNN to investigate this
+relationship (KNN is required) you may also feel free to supplement your
+response to this question with any other methods or techniques you have
+learned. Creativity and alternative solutions are always encouraged.</p>
+<ol start="9" style="list-style-type: decimal">
+<li>Knock their socks off! Find one other useful inference from the data
+that you feel Budweiser may be able to find value in. You must convince
+them why it is important and back up your conviction with appropriate
+statistical evidence.</li>
+</ol>
+<pre class="r"><code>library(tidyr)
+
+#Labeled the breaks in IBU from mild to extremely bitter
+merged_Imputed$Bitterness &lt;- cut(as.numeric(merged$IBU), breaks=c(0, 20, 40, 60, 80, 140), labels=c(&#39;Mild&#39;, &#39;Moderately Bitter&#39;, &#39;Fairly Bitter&#39;, &#39;Very Bitter&#39;, &#39;Extremely Bitter&#39;))
+
+bitterness_count &lt;- merged_Imputed %&gt;% 
+  drop_na(Bitterness) %&gt;% 
+  group_by(Bitterness) %&gt;% 
+  summarize(Count = n()) %&gt;% 
+  arrange(desc(Count))
+
+
+# define colors for each bitterness value
+colors &lt;- brewer.pal(length(unique(bitterness_count$Bitterness)), &quot;Set1&quot;)
+
+#plot a bar graph to show the count of each level of bitterness
+ggplot(bitterness_count, aes(x = reorder(Bitterness, Count), y = Count, fill = Bitterness)) +
+  geom_bar(stat = &quot;identity&quot;) +
+  xlab(&quot;Bitterness&quot;) + ylab(&quot;Count&quot;) +
+  ggtitle(&quot;Count of Bitterness&quot;) +
+  theme_wsj() + 
+  theme(plot.title = element_text(size = 14, face = &quot;bold&quot;),
+        axis.text.x = element_text(angle = 45, hjust = 1)) +
+  geom_text(aes(label = Count), vjust = -0.5) +
+  scale_fill_manual(values = setNames(colors, unique(bitterness_count$Bitterness)))</code></pre>
+<p><img src="BeerStudy_files/figure-html/Create%20new%20Categorical%20Variable-1.png" width="672" />
+For question 9 we used the bitterness levels from mild to extremely
+bitter and displayed the count of each level with the given data.</p>
+<p>We also used ChatGPT to form each level of bitterness and ranked them
+accordingly.</p>
+<p>According to ChatGPT:</p>
+<p>0-20 IBUs: Mild, low bitterness beers such as Scottish ales, brown
+ales, and cream ales. 20-40 IBUs: Moderately bitter beers such as
+English bitters, American amber ales, and most lagers. 40-60 IBUs:
+Fairly bitter beers such as IPAs, American pale ales, and most Belgian
+ales. 60-80 IBUs: Very bitter beers such as double IPAs, imperial
+stouts, and some barleywines. 80+ IBUs: Extremely bitter beers such as
+triple IPAs and some imperial stouts.</p>
+<p>Why you should care! Since we did not have any sales data, that could
+be the next exploratory data analysis. Now that we know where the market
+is saturated we can take a look at the potential for exploring new
+markets that might be untapped by Budweiser. As we review the bar chart
+of the different levels we can see majority of beers are moderately
+bitter to mild(59% of beers), however only 6% of beers are extremely
+bitter. Therefore, we could find a lot of value exploring extremely
+bitter beers.</p>
+<p>Conclusion: In the end we were able to retrieve all sorts of
+information. We were able to visually display the number of breweries
+per state, how each states differed in IBU and ABV, and what the average
+values of IBU and ABV were in each states. We also proceeded to
+displayed how IBU and ABV correlated with each other and how when the
+score of IBU increased so did the ABV.Then to round everything off we
+used the KNN model and MICE model to predict missing values and find the
+accuracy, specificity, and sensitivity among the data we were given.</p>
+<p>Thank you for your time, we enjoyed working with this data and look
+forward to where our partnership will go.</p>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

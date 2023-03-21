@@ -1,0 +1,8 @@
+name: "Nicholas-Mueller"
+navbar:
+  title: "Nicholas Mueller"
+  left:
+    - text: "About Me"
+      href: Templete.html
+    - text: "Beer Study"
+      href: BeerStudy.html
