@@ -6,3 +6,5 @@ navbar:
       href: index.html
     - text: "Beer Study"
       href: BeerStudy.html
+    - text: "Ames, Iowa Comp."
+      href: StatsProj1.pdf
