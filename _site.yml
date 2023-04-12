@@ -8,3 +8,5 @@ navbar:
       href: BeerStudy.html
     - text: "Ames, Iowa Comp."
       href: StatsProj1.pdf
+    - text: "DDS CaseStudy2"
+      href: CaseStud2.html
