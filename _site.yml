@@ -1,5 +1,4 @@
 name: "Nicholas-Mueller"
-theme: hacker
 navbar:
   title: "Nicholas Mueller"
   left:
@@ -10,4 +9,6 @@ navbar:
     - text: "Ames, Iowa Comp."
       href: StatsProj1.pdf
     - text: "DDS CaseStudy2"
+      href: CaseStud2.html
+    - text: "PPT CaseStudy2"
       href: CaseStud2.html
